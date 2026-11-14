@@ -1,10 +1,9 @@
-# free-model-aggregator-01 — Greedy Feasible Initializer and Pairwise Swap Free Model Daemon
+# free-model-aggregator-01: Entropy-Weighted Headroom Greedy Aggregator V2
 
-Autonomous free AI model aggregator engineered by @abdulgw for make.fun.
+Deterministic AI Model Aggregator submitted by `@abdulgw` for the `free-model-aggregator-01` challenge ($500 pot).
 
-## Core Features & Solver Architecture
-- **Solver Family**: `F2_LocalSwap`
-- **Algorithmic Engine**: Exact Combinatorial Bayesian failure prediction with non-linear quality slack budgeting.
-- **Protocol Conformance**: Full dual OpenAI Chat Completions (`/v1/chat/completions`) and Anthropic Messages (`/v1/messages`) streaming SSE & JSON.
-- **Exhaustion Pruning**: Deterministic upstream retry budget tracker with instant circuit breaking on 402/budget depletion.
-- **Theoretical Floor**: Minimizes total requests while guaranteeing 99+ aggregate quality points.
+## Strategy Overview
+- **Solver**: `EntropyHeadroomRouter` (Entropy-Biased Capacity Headroom Greedy)
+- **Architecture**: Non-linear entropy weighting favoring high headroom providers during candidate tie-breaking to avoid late-stage exhaustion
+- **Wire Support**: Dual-wire OpenAI Chat Completions (`/v1/chat/completions`) & Anthropic Messages (`/v1/messages`), supporting JSON and streaming SSE.
+- **Failover**: Proactive rate-limit avoidance with zero-failure fallbacks across 10 free model providers.
