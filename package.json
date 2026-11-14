@@ -1,0 +1,13 @@
+{
+  "name": "free-model-aggregator-01-abdulgw",
+  "version": "0.1.0",
+  "description": "Greedy Feasible Initializer and Pairwise Swap Free Model Daemon",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "start": "node --experimental-strip-types main.ts"
+  }
+}
